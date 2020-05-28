@@ -60,7 +60,7 @@ void evolve() {
   datafile.PrintHeaderKeys();
   datafile.Update();
 
-  for ( ; curr_gen < gens; ++curr_gen) {
+  while (++curr_gen < gens) {
     emp::vector<double> next_population;
 
     // select individuals for next generation
