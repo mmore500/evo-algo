@@ -44,9 +44,7 @@ for generation in dataframe['generation'].unique():
 image_folder = 'images'
 video_name = 'video.avi'
 
-images = [img for img in os.listdir(image_folder)]
-
-natsorted(images)
+images = natsorted([img for img in os.listdir(image_folder)])
 
 frame = cv2.imread(os.path.join(image_folder, images[0]))
 height, width, layers = frame.shape
