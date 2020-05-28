@@ -24,11 +24,13 @@ for generation in dataframe['generation'].unique():
         data=dataframe[dataframe['generation'] == generation],
         x="genome",
         y="fitness",
+        palette=sns.color_palette("husl"),
+        alpha=0.5,
     )
 
     sns.lineplot(
-        x=np.linspace(dataframe['generation'].min(), 6, 100),
-        y=list(map(fitness, np.linspace(0, 6, 100)))
+        x=np.linspace(-2, 6, 100),
+        y=list(map(fitness, np.linspace(-2, 6, 100)))
     )
 
     if not os.path.exists("images"):
