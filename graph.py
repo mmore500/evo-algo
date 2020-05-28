@@ -10,6 +10,7 @@ import cv2
 import os
 
 dataframe = pd.read_csv("evo-algo.csv")
+print(dataframe)
 
 def fitness(x):
     return (
@@ -38,8 +39,6 @@ for generation in dataframe['generation'].unique():
 
     plt.savefig("images/{0:03d}.png".format(generation))
     plt.clf()
-
-print(dataframe)
 
 # adapted from https://stackoverflow.com/a/44948030
 image_folder = 'images'
